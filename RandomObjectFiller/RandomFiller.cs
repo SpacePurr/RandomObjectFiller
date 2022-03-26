@@ -65,6 +65,10 @@ namespace RandomObjectFiller
             {
                 return Generate(propertyType);
             }
+            else if(propertyType.IsEnum)
+            {
+                return Enum.GetValues(propertyType).GetValue(0);
+            }
             else
             {
                 return default;
